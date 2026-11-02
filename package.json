@@ -1,0 +1,22 @@
+{
+  "name": "mira-luxury-appliances",
+  "version": "1.0.0",
+  "description": "MIRA — Architectural Domestic Intelligence Web Application",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve . -l 3000",
+    "start": "npx serve . -l 3000",
+    "serve": "python3 -m http.server 3000",
+    "build": "echo 'Project is pure modern zero-build vanilla ESM architecture ready for static deployment.'"
+  },
+  "keywords": [
+    "mira",
+    "luxury-ecommerce",
+    "apple-minimalism",
+    "scrollytelling",
+    "dual-currency",
+    "rtl-arabic"
+  ],
+  "author": "MIRA Studio",
+  "license": "MIT"
+}

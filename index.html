@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIRA — Architectural Domestic Intelligence</title>
+  
+  <!-- Fonts: Inter for Latin, Cairo & IBM Plex Sans for Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-jet antialiased selection:bg-black selection:text-white">
+
+  <!-- ==================== TOP SYSTEM BANNER ==================== -->
+  <aside class="w-full bg-[#121214] text-[#86868B] text-[11px] sm:text-xs py-1.5 px-4 text-center font-medium tracking-wide border-b border-white/10 flex items-center justify-center gap-3">
+    <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+    <span data-i18n="topBanner">MIRA Ecosystem 2026 — Private Virtual Reserve Open in Riyadh & Worldwide</span>
+  </aside>
+
+  <!-- ==================== FLOATING NAVIGATION BAR ==================== -->
+  <header class="sticky top-0 z-50 w-full transition-all duration-300 backdrop-blur-xl bg-white/80 border-b border-black/[0.06]" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="group flex items-center gap-2 text-jet tracking-[0.25em] font-semibold text-lg sm:text-xl transition-transform active:scale-95">
+        <span class="font-extrabold tracking-[0.3em]">MIRA</span>
+        <span class="text-[10px] text-gray-400 font-normal tracking-widest uppercase border border-gray-200 px-1.5 py-0.5 rounded">Studio</span>
+      </a>
+
+      <!-- Center Links (Desktop) -->
+      <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium text-[#48484A]">
+        <a href="#hero" class="nav-link hover:text-black transition-colors" data-i18n="navOverview">Overview</a>
+        <a href="#keynote" class="nav-link hover:text-black transition-colors" data-i18n="navKeynote">Keynote</a>
+        <a href="#catalog" class="nav-link hover:text-black transition-colors" data-i18n="navCollection">Collection (7)</a>
+        <a href="#philosophy" class="nav-link hover:text-black transition-colors" data-i18n="navPhilosophy">Philosophy</a>
+      </nav>
+
+      <!-- Utility Controls (Language, Currency, Bag/Cart) -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        
+        <!-- Currency Switcher Toggle -->
+        <div class="pill-segmented-control flex items-center bg-[#F5F5F7] p-0.5 rounded-full border border-black/5 text-[11px] font-semibold">
+          <button type="button" class="currency-btn active-pill px-2.5 py-1 rounded-full transition-all" data-currency="USD" id="btnUSD">USD ($)</button>
+          <button type="button" class="currency-btn px-2.5 py-1 rounded-full transition-all text-[#6E6E73] hover:text-black" data-currency="SAR" id="btnSAR">SAR (ر.س)</button>
+        </div>
+
+        <!-- Language Switcher Toggle -->
+        <div class="pill-segmented-control flex items-center bg-[#F5F5F7] p-0.5 rounded-full border border-black/5 text-[11px] font-semibold">
+          <button type="button" class="lang-btn active-pill px-2.5 py-1 rounded-full transition-all" data-lang="en" id="btnLangEN">EN</button>
+          <button type="button" class="lang-btn px-2.5 py-1 rounded-full transition-all text-[#6E6E73] hover:text-black" data-lang="ar" id="btnLangAR">العربية</button>
+        </div>
+
+        <!-- Quick Cart / Bag Button -->
+        <button type="button" id="cartToggleBtn" class="relative p-2 rounded-full hover:bg-[#F5F5F7] text-jet transition-colors" aria-label="Open Cart">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" />
+          </svg>
+          <span id="cartCountBadge" class="hidden absolute top-1 right-1 w-4 h-4 bg-black text-white text-[9px] font-bold rounded-full flex items-center justify-center">0</span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION (APPLE KEYNOTE STYLE) ==================== -->
+  <section id="hero" class="relative pt-16 pb-24 overflow-hidden bg-gradient-to-b from-white via-[#FAFAFC] to-[#F5F5F7]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      
+      <!-- Monolithic Headline -->
+      <div class="inline-block mb-3 px-3.5 py-1 rounded-full border border-black/[0.08] bg-white/70 backdrop-blur text-[11px] font-medium tracking-[0.18em] uppercase text-[#6E6E73]">
+        <span data-i18n="heroBadge">Architecture in Silence</span>
+      </div>
+
+      <h1 class="text-6xl sm:text-8xl md:text-9xl font-bold tracking-tight text-jet mb-4 select-none">
+        MIRA
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-xl sm:text-2xl md:text-3xl font-normal text-[#1D1D1F] tracking-tight leading-snug mb-3" data-i18n="heroHeadline">
+        The quiet revolution in domestic intelligence.
+      </p>
+
+      <p class="max-w-xl mx-auto text-sm sm:text-base text-[#6E6E73] font-normal leading-relaxed mb-8" data-i18n="heroSubhead">
+        Seven monolithic home instruments forged from matte aerospace aluminum and solid walnut. Designed in Arabia. Refined for the world.
+      </p>
+
+      <!-- Hero Action CTAs -->
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-14">
+        <a href="#catalog" class="btn-apple-primary px-6 py-3 rounded-full text-sm font-semibold tracking-wide text-white bg-black hover:bg-[#2C2C2E] shadow-sm transition-all active:scale-98 flex items-center gap-2">
+          <span data-i18n="btnExplore">Explore Collection</span>
+          <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+
+        <button type="button" onclick="window.miraApp.openDirectCheckout('mira-home')" class="btn-apple-secondary px-6 py-3 rounded-full text-sm font-semibold tracking-wide text-jet bg-white hover:bg-[#F0F0F2] border border-black/10 transition-all active:scale-98 flex items-center gap-2">
+          <span data-i18n="btnOrderHome">Order MIRA HOME</span>
+          <span class="text-xs text-[#86868B] font-mono" id="heroPriceTag">$149</span>
+        </button>
+      </div>
+
+      <!-- Hero Product Interactive Showcase (MIRA HOME) -->
+      <div class="relative mx-auto max-w-3xl rounded-3xl bg-white p-4 sm:p-8 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.07)] border border-black/[0.06] transition-all duration-500 hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.12)]">
+        
+        <!-- Live Finish Controls -->
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-black/[0.05]">
+          <div class="flex items-center gap-2 text-start">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            <div>
+              <p class="text-xs font-semibold text-jet" data-i18n="heroHubTitle">MIRA HOME — Central Command Hub</p>
+              <p class="text-[11px] text-[#86868B]" data-i18n="heroHubStatus">Matter 2.0 • Ultra-Wideband Radar • Offline NPU</p>
+            </div>
+          </div>
+
+          <!-- Colorway Toggle for Hero -->
+          <div class="flex items-center gap-1.5 bg-[#F5F5F7] p-1 rounded-full border border-black/[0.05]">
+            <button type="button" class="hero-color-btn active-color w-6 h-6 rounded-full bg-[#2A2B2E] border-2 border-white shadow-sm" data-finish="charcoal" title="Matte Charcoal" aria-label="Matte Charcoal"></button>
+            <button type="button" class="hero-color-btn w-6 h-6 rounded-full bg-[#EAEAE8] border-2 border-transparent hover:border-black/20 shadow-sm" data-finish="white" title="Pristine White" aria-label="Pristine White"></button>
+            <button type="button" class="hero-color-btn w-6 h-6 rounded-full bg-[#8E6D4E] border-2 border-transparent hover:border-black/20 shadow-sm flex items-center justify-center text-[9px] text-white" data-finish="wall" title="Wall Mount View" aria-label="Wall View">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Image Container -->
+        <div class="relative w-full aspect-[4/5] sm:aspect-[16/11] overflow-hidden rounded-2xl bg-[#EBEBEF] flex items-center justify-center group">
+          <img id="heroImage" src="assets/images/mira-home-charcoal.jpg" alt="MIRA HOME" class="w-full h-full object-cover object-center transition-all duration-700 ease-out transform group-hover:scale-[1.02]">
+          
+          <!-- Interactive Hotspot 1: OLED Screen -->
+          <div class="absolute top-[42%] left-[48%] -translate-x-1/2 -translate-y-1/2 group/spot cursor-pointer">
+            <span class="relative flex h-5 w-5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white/60 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-5 w-5 bg-white/90 text-black shadow-lg items-center justify-center text-[10px] font-bold">+</span>
+            </span>
+            <div class="hidden group-hover/spot:block absolute bottom-7 left-1/2 -translate-x-1/2 w-48 p-2.5 rounded-xl bg-black/90 backdrop-blur-md text-white text-[11px] leading-tight text-center shadow-2xl pointer-events-none z-20">
+              <p class="font-semibold mb-0.5" data-i18n="spot1Title">Circular OLED Display</p>
+              <p class="text-white/70" data-i18n="spot1Desc">Full Arabic & English calm interface showing real-time home telemetry.</p>
+            </div>
+          </div>
+
+          <!-- Interactive Hotspot 2: Base Walnut -->
+          <div class="absolute bottom-[10%] left-[50%] -translate-x-1/2 group/spot cursor-pointer">
+            <span class="relative flex h-5 w-5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400/50 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-5 w-5 bg-amber-100 text-amber-900 shadow-lg items-center justify-center text-[10px] font-bold">+</span>
+            </span>
+            <div class="hidden group-hover/spot:block absolute bottom-7 left-1/2 -translate-x-1/2 w-48 p-2.5 rounded-xl bg-black/90 backdrop-blur-md text-white text-[11px] leading-tight text-center shadow-2xl pointer-events-none z-20">
+              <p class="font-semibold mb-0.5" data-i18n="spot2Title">Solid Natural Walnut</p>
+              <p class="text-white/70" data-i18n="spot2Desc">Acoustic isolation plinth crafted from sustainably harvested timber.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Metric Specs Footer -->
+        <div class="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-black/[0.05] text-center">
+          <div>
+            <p class="text-[10px] sm:text-xs text-[#86868B] uppercase tracking-wider" data-i18n="spec1Label">Audio Engine</p>
+            <p class="text-xs sm:text-sm font-semibold text-jet" data-i18n="spec1Val">Spatial 360° Array</p>
+          </div>
+          <div>
+            <p class="text-[10px] sm:text-xs text-[#86868B] uppercase tracking-wider" data-i18n="spec2Label">Neural Core</p>
+            <p class="text-xs sm:text-sm font-semibold text-jet" data-i18n="spec2Val">Zero-Cloud Latency</p>
+          </div>
+          <div>
+            <p class="text-[10px] sm:text-xs text-[#86868B] uppercase tracking-wider" data-i18n="spec3Label">Chassis</p>
+            <p class="text-xs sm:text-sm font-semibold text-jet" data-i18n="spec3Val">Unibody Anodized</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SCROLLYTELLING KEYNOTE SECTION ==================== -->
+  <section id="keynote" class="py-24 bg-[#121214] text-white overflow-hidden transition-colors duration-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Keynote Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-white/10 gap-4">
+        <div>
+          <span class="text-[11px] font-mono uppercase tracking-[0.2em] text-[#86868B]" data-i18n="keynoteTagline">Apple Scrollytelling Experience</span>
+          <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-white mt-1" data-i18n="keynoteHeading">The 2026 Keynote Showcase.</h2>
+        </div>
+        <p class="text-sm text-[#A1A1A6] max-w-md leading-relaxed" data-i18n="keynoteSub">
+          Every appliance is engineered to disappear into your home until summoned. Explore the seven pillars of MIRA engineering.
+        </p>
+      </div>
+
+      <!-- Keynote Navigation Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-4 no-scrollbar mb-8" id="keynoteNavTabs">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <!-- Keynote Stage Presentation Container -->
+      <div id="keynoteStage" class="relative rounded-3xl bg-[#1C1C1E] border border-white/10 p-6 sm:p-10 lg:p-14 overflow-hidden">
+        <!-- Injected dynamically by app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FULL PRODUCT CATALOG GRID (7 APPLIANCES) ==================== -->
+  <section id="catalog" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title & Filter Controls -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-[11px] font-mono uppercase tracking-[0.25em] text-[#86868B]" data-i18n="catalogTagline">The Official Suite</span>
+        <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-jet mt-2 mb-4" data-i18n="catalogHeading">Seven Instruments. One Ecosystem.</h2>
+        <p class="text-base sm:text-lg text-[#6E6E73] leading-relaxed" data-i18n="catalogSubtitle">
+          Designed with unified architectural proportions. Switch colors, inspect packaging crates, and order with instant virtual card approval.
+        </p>
+      </div>
+
+      <!-- Catalog Grid: 7 Products -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="productGrid">
+        <!-- Injected dynamically by app.js for full reactivity -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== ARCHITECTURAL PHILOSOPHY ==================== -->
+  <section id="philosophy" class="py-24 bg-[#F5F5F7] border-y border-black/[0.06]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        
+        <div class="p-8 rounded-3xl bg-white border border-black/[0.05] shadow-sm">
+          <div class="w-10 h-10 rounded-2xl bg-[#F5F5F7] flex items-center justify-center mb-6 text-jet">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-jet mb-2" data-i18n="philo1Title">Monolithic Proportion</h3>
+          <p class="text-sm text-[#6E6E73] leading-relaxed" data-i18n="philo1Desc">
+            Eliminating visual clutter, seams, and visible screws. Each unit is carved from bead-blasted aluminum alloy seated upon sustainable solid walnut timber.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border border-black/[0.05] shadow-sm">
+          <div class="w-10 h-10 rounded-2xl bg-[#F5F5F7] flex items-center justify-center mb-6 text-jet">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.516 0c.85.493 1.509 1.333 1.509 2.316V18" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-jet mb-2" data-i18n="philo2Title">Calm UI & Arabic First</h3>
+          <p class="text-sm text-[#6E6E73] leading-relaxed" data-i18n="philo2Desc">
+            Screens remain dormant black or gentle ambient rings until approached. Native Arabic typography crafted with IBM Plex Sans and Cairo for pure cultural resonance.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white border border-black/[0.05] shadow-sm">
+          <div class="w-10 h-10 rounded-2xl bg-[#F5F5F7] flex items-center justify-center mb-6 text-jet">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-jet mb-2" data-i18n="philo3Title">Encrypted Mesh Interconnect</h3>
+          <p class="text-sm text-[#6E6E73] leading-relaxed" data-i18n="philo3Desc">
+            Zero reliance on foreign cloud servers. MIRA devices sync locally across encrypted Thread and Matter protocols, ensuring privacy and sub-millisecond response.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== APPLE PAY STYLE SLIDE-OVER CHECKOUT DRAWER ==================== -->
+  <div id="checkoutBackdrop" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+
+  <div id="checkoutDrawer" class="fixed top-0 bottom-0 right-0 rtl:right-auto rtl:left-0 w-full max-w-lg bg-white z-50 shadow-2xl transition-transform duration-300 transform translate-x-full rtl:-translate-x-full flex flex-col justify-between overflow-y-auto">
+    
+    <!-- Drawer Header -->
+    <div class="p-6 border-b border-black/[0.06] flex items-center justify-between sticky top-0 bg-white/95 backdrop-blur z-10">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-jet" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.93-2.85-.9.04-2 .6-2.64 1.35-.56.64-1.05 1.71-.92 2.74 1.01.08 2.02-.49 2.63-1.24z"/>
+        </svg>
+        <span class="text-sm font-semibold tracking-wider text-jet" data-i18n="checkoutTitle">MIRA Instant Pay</span>
+      </div>
+      <button type="button" id="closeDrawerBtn" class="p-2 rounded-full hover:bg-gray-100 text-gray-500 hover:text-black transition-colors" aria-label="Close Checkout">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Drawer Body -->
+    <div class="p-6 space-y-6 flex-1">
+      
+      <!-- STEP 1: Form & Order Review View -->
+      <div id="checkoutFormStep" class="space-y-6">
+        
+        <!-- Product Item Selected Card -->
+        <div class="p-4 rounded-2xl bg-[#F5F5F7] border border-black/[0.04] flex items-center gap-4">
+          <img id="drawerProductImg" src="assets/images/mira-home-charcoal.jpg" alt="Selected Product" class="w-20 h-20 rounded-xl object-cover border border-black/5 bg-white">
+          <div class="flex-1">
+            <h4 id="drawerProductName" class="text-base font-bold text-jet">MIRA HOME</h4>
+            <p id="drawerProductFinish" class="text-xs text-[#86868B] mb-1">Matte Charcoal Finish</p>
+            <p id="drawerProductPrice" class="text-sm font-bold text-jet font-mono">$149 USD</p>
+          </div>
+        </div>
+
+        <!-- Realistic Interactive Virtual Card Widget (Apple Pay Elegance) -->
+        <div class="relative w-full aspect-[1.586] rounded-2xl p-5 text-white shadow-xl overflow-hidden bg-gradient-to-tr from-[#1E1E22] via-[#2A2B30] to-[#141416] border border-white/10 select-none">
+          <!-- Background Geometric Mesh -->
+          <div class="absolute -right-8 -bottom-8 w-44 h-44 rounded-full bg-white/[0.04] blur-xl pointer-events-none"></div>
+          
+          <div class="relative h-full flex flex-col justify-between">
+            <div class="flex items-center justify-between">
+              <span class="text-xs tracking-[0.25em] font-semibold text-white/90">MIRA VIRTUAL</span>
+              <!-- Card Network Badge (Auto changes) -->
+              <div id="cardBrandBadge" class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-white/10 border border-white/15 text-[10px] font-bold tracking-wider text-white">
+                MADA / VISA
+              </div>
+            </div>
+
+            <!-- Card Chip & Wireless icon -->
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-7 rounded-md bg-gradient-to-br from-amber-200 via-amber-400 to-amber-600 shadow-inner flex items-center justify-center p-0.5">
+                <div class="w-full h-full border border-amber-800/40 rounded flex flex-col justify-around py-0.5">
+                  <div class="h-px bg-amber-800/30"></div>
+                  <div class="h-px bg-amber-800/30"></div>
+                </div>
+              </div>
+              <svg class="w-4 h-4 text-white/60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0" />
+              </svg>
+            </div>
+
+            <!-- Card Number Preview -->
+            <div class="font-mono text-base sm:text-lg tracking-[0.18em] text-white/95" id="virtualCardNumberDisplay">
+              •••• •••• •••• 4242
+            </div>
+
+            <!-- Cardholder & Expiry -->
+            <div class="flex items-end justify-between text-xs font-mono">
+              <div>
+                <p class="text-[9px] text-white/50 uppercase tracking-widest" data-i18n="cardHolder">Cardholder</p>
+                <p class="font-medium tracking-wider text-white truncate max-w-[180px]" id="virtualCardHolderDisplay">MIRA PRIVILEGE</p>
+              </div>
+              <div class="text-end">
+                <p class="text-[9px] text-white/50 uppercase tracking-widest" data-i18n="cardExpiry">Expires</p>
+                <p class="font-medium tracking-wider text-white" id="virtualCardExpiryDisplay">12/28</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Virtual Card Inputs Form -->
+        <form id="virtualPaymentForm" class="space-y-4">
+          
+          <div>
+            <label for="inputCardHolder" class="block text-xs font-semibold text-[#1D1D1F] mb-1.5" data-i18n="labelCardHolder">Cardholder Name</label>
+            <input type="text" id="inputCardHolder" required placeholder="Sultan Al-Otaibi / John Doe" class="w-full px-4 py-2.5 rounded-xl border border-black/15 bg-white text-sm text-jet focus:outline-none focus:ring-2 focus:ring-black transition">
+          </div>
+
+          <div>
+            <label for="inputCardNumber" class="block text-xs font-semibold text-[#1D1D1F] mb-1.5" data-i18n="labelCardNumber">16-Digit Virtual Card Number</label>
+            <input type="text" id="inputCardNumber" required maxlength="19" placeholder="4242 4242 4242 4242" class="w-full px-4 py-2.5 rounded-xl border border-black/15 bg-white text-sm font-mono text-jet focus:outline-none focus:ring-2 focus:ring-black transition">
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label for="inputCardExpiry" class="block text-xs font-semibold text-[#1D1D1F] mb-1.5" data-i18n="labelExpiry">MM / YY</label>
+              <input type="text" id="inputCardExpiry" required maxlength="5" placeholder="12/28" class="w-full px-4 py-2.5 rounded-xl border border-black/15 bg-white text-sm font-mono text-jet focus:outline-none focus:ring-2 focus:ring-black transition">
+            </div>
+            <div>
+              <label for="inputCardCVC" class="block text-xs font-semibold text-[#1D1D1F] mb-1.5" data-i18n="labelCVC">CVC</label>
+              <input type="password" id="inputCardCVC" required maxlength="4" placeholder="888" class="w-full px-4 py-2.5 rounded-xl border border-black/15 bg-white text-sm font-mono text-jet focus:outline-none focus:ring-2 focus:ring-black transition">
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200/60 text-emerald-900 text-xs flex items-center gap-2">
+            <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span data-i18n="cardPolicyNotice">Always Approved Mock Mode: Any test card credentials will be validated and authorized.</span>
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- STEP 2: Mock Authorization Progress Screen -->
+      <div id="checkoutAuthStep" class="hidden py-16 text-center space-y-6">
+        <div class="relative w-20 h-20 mx-auto">
+          <div class="w-20 h-20 rounded-full border-4 border-gray-200 border-t-black animate-spin"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.93-2.85-.9.04-2 .6-2.64 1.35-.56.64-1.05 1.71-.92 2.74 1.01.08 2.02-.49 2.63-1.24z"/>
+            </svg>
+          </div>
+        </div>
+
+        <div>
+          <h4 id="authStatusText" class="text-base font-semibold text-jet mb-1" data-i18n="authorizingToken">Authorizing Virtual Token...</h4>
+          <p class="text-xs text-[#86868B]" data-i18n="securingEnclave">MIRA Secure Enclave Handshake</p>
+        </div>
+
+        <!-- Sleek Apple Progress Line -->
+        <div class="w-full bg-gray-100 h-1 rounded-full overflow-hidden">
+          <div id="authProgressBar" class="bg-black h-1 rounded-full transition-all duration-300 w-1/4"></div>
+        </div>
+      </div>
+
+      <!-- STEP 3: Guaranteed Success Screen -->
+      <div id="checkoutSuccessStep" class="hidden py-6 space-y-6">
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 shadow-sm">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-jet" data-i18n="orderApproved">Transaction Approved</h3>
+          <p class="text-xs text-[#86868B] mt-1" data-i18n="orderApprovedSub">تم قبول العملية بنجاح عبر بوابة MIRA المشفرة</p>
+        </div>
+
+        <!-- Receipt Card -->
+        <div class="p-5 rounded-2xl bg-[#F5F5F7] border border-black/[0.06] space-y-3 text-xs">
+          
+          <div class="flex justify-between pb-2 border-b border-black/[0.05]">
+            <span class="text-[#86868B]" data-i18n="receiptOrderId">Order Reference</span>
+            <span class="font-mono font-bold text-jet" id="receiptOrderId">MIRA-2026-8849-SA</span>
+          </div>
+
+          <div class="flex justify-between pb-2 border-b border-black/[0.05]">
+            <span class="text-[#86868B]" data-i18n="receiptItem">Product Instrument</span>
+            <span class="font-semibold text-jet" id="receiptItemName">MIRA HOME</span>
+          </div>
+
+          <div class="flex justify-between pb-2 border-b border-black/[0.05]">
+            <span class="text-[#86868B]" data-i18n="receiptFinish">Architectural Finish</span>
+            <span class="font-semibold text-jet" id="receiptFinishVal">Matte Charcoal</span>
+          </div>
+
+          <div class="flex justify-between pb-2 border-b border-black/[0.05]">
+            <span class="text-[#86868B]" data-i18n="receiptTotal">Total Amount Paid</span>
+            <span class="font-mono font-bold text-jet text-sm" id="receiptAmountVal">$149 USD</span>
+          </div>
+
+          <div class="flex justify-between pb-2 border-b border-black/[0.05]">
+            <span class="text-[#86868B]" data-i18n="receiptAuthCode">Authorization Code</span>
+            <span class="font-mono text-emerald-700 font-semibold" id="receiptAuthCode">AUTH-789230</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-[#86868B]" data-i18n="receiptDate">Timestamp</span>
+            <span class="font-mono text-jet" id="receiptTimestamp">2026-11-02 19:18 GMT+3</span>
+          </div>
+
+        </div>
+
+        <!-- Download Virtual Receipt Action -->
+        <div class="space-y-2">
+          <button type="button" id="downloadReceiptBtn" class="w-full py-3 rounded-xl bg-black text-white text-xs font-semibold flex items-center justify-center gap-2 hover:bg-[#2C2C2E] transition active:scale-98">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+            </svg>
+            <span data-i18n="btnDownloadReceipt">Download Official Virtual Receipt</span>
+          </button>
+
+          <button type="button" id="orderAnotherBtn" class="w-full py-2.5 rounded-xl bg-white border border-black/10 text-xs font-semibold text-jet hover:bg-gray-50 transition active:scale-98" data-i18n="btnAnotherOrder">
+            Configure Another Instrument
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Drawer Footer Actions (Only shown during Step 1) -->
+    <div id="checkoutDrawerFooter" class="p-6 border-t border-black/[0.06] bg-[#FAFAFC] sticky bottom-0">
+      <div class="flex items-center justify-between mb-3 text-xs">
+        <span class="text-[#86868B]" data-i18n="totalDue">Total Due</span>
+        <span class="text-base font-bold text-jet font-mono" id="drawerTotalDue">$149 USD</span>
+      </div>
+
+      <button type="button" id="submitAuthBtn" class="w-full py-3.5 rounded-xl bg-black text-white text-sm font-semibold tracking-wide hover:bg-[#2C2C2E] shadow-sm flex items-center justify-center gap-2 transition active:scale-98">
+        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.93-2.85-.9.04-2 .6-2.64 1.35-.56.64-1.05 1.71-.92 2.74 1.01.08 2.02-.49 2.63-1.24z"/>
+        </svg>
+        <span data-i18n="btnAuthorizePay">Authorize Virtual Payment</span>
+      </button>
+
+      <p class="text-[10px] text-center text-[#86868B] mt-2" data-i18n="encryptedHandshake">
+        Zero Friction • Instant Mock Authorization • Encrypted Vault
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ==================== SPECIFICATIONS MODAL ==================== -->
+  <div id="specsModalBackdrop" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none flex items-center justify-center p-4">
+    <div id="specsModalCard" class="bg-white rounded-3xl max-w-lg w-full max-h-[85vh] overflow-y-auto shadow-2xl border border-black/10 transform scale-95 transition-transform duration-300 p-6 sm:p-8">
+      <div class="flex items-center justify-between pb-4 border-b border-black/[0.06] mb-4">
+        <div>
+          <span class="text-[10px] font-mono text-[#86868B] uppercase tracking-widest" data-i18n="techSpecBadge">Architectural Specification</span>
+          <h3 id="modalProductName" class="text-xl font-bold text-jet">MIRA HOME</h3>
+        </div>
+        <button type="button" id="closeSpecsModalBtn" class="p-2 rounded-full hover:bg-gray-100 text-gray-500 hover:text-black">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-xs" id="modalSpecsBody">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MINIMALIST FOOTER ==================== -->
+  <footer class="bg-[#121214] text-[#86868B] py-16 border-t border-white/10 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-white/10">
+        <div>
+          <h5 class="text-white font-semibold mb-3 tracking-wider" data-i18n="footerInstruments">The Instruments</h5>
+          <ul class="space-y-2">
+            <li><a href="#catalog" class="hover:text-white transition">MIRA HOME ($149)</a></li>
+            <li><a href="#catalog" class="hover:text-white transition">MIRA FRIDGE ($3,299)</a></li>
+            <li><a href="#catalog" class="hover:text-white transition">MIRA MINI FRIDGE ($599)</a></li>
+            <li><a href="#catalog" class="hover:text-white transition">MIRA OVEN ($899)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-white font-semibold mb-3 tracking-wider" data-i18n="footerInstrumentsMore">More Appliances</h5>
+          <ul class="space-y-2">
+            <li><a href="#catalog" class="hover:text-white transition">MIRA BREW ($399)</a></li>
+            <li><a href="#catalog" class="hover:text-white transition">MIRA AIR ($799)</a></li>
+            <li><a href="#catalog" class="hover:text-white transition">MIRA WASH ($949)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-white font-semibold mb-3 tracking-wider" data-i18n="footerEcosystem">Ecosystem</h5>
+          <ul class="space-y-2">
+            <li><span class="text-white/60">Matter 2.0 Integration</span></li>
+            <li><span class="text-white/60">Thread Wireless Mesh</span></li>
+            <li><span class="text-white/60">Offline Neural Engine</span></li>
+            <li><span class="text-white/60">Calm UI Design System</span></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-white font-semibold mb-3 tracking-wider" data-i18n="footerStudio">MIRA Studio</h5>
+          <p class="text-[11px] leading-relaxed text-white/50 mb-3" data-i18n="footerStudioText">
+            Virtual atelier in Riyadh, Kingdom of Saudi Arabia. Creating domestic serenity through understated form.
+          </p>
+          <span class="inline-block px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-white/80 font-mono text-[10px]">
+            Dual Pricing: USD & SAR
+          </span>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
+        <p>© 2026 MIRA Technologies LLC. All rights reserved. Apple-inspired design concept.</p>
+        <p class="font-mono text-[#6E6E73]">Riyadh • Cupertino • Tokyo • Zurich</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
